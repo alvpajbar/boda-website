@@ -214,7 +214,7 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>¡Un momento!</strong> Estamos guardando tu información.'));
 
-        if ('#invite_code' !== '11102025') {
+        if ('#invite_code' !== '111025') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Tu código de invitación es incorrecto.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxOlKJGmz7u0MK3UeM-cqgevx9s68J4m71jivYQLOX7WaUIjNoWSdgRxlVmCuJuf4k/exec', data)
