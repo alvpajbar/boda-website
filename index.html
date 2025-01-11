@@ -61,6 +61,11 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
         onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!-- Incluir los estilos de Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Incluir los scripts de Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body id="top">
@@ -173,92 +178,34 @@
                     <h3 class="header">T & A</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/1.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="fancybox" rel="group" href="img/eng_pics/1.jpg">
+                            <div class="img-wrap">
+                                <img src="img/eng_pics/1.jpg" alt="Engagement photo 1" />
                             </div>
-                            <img src="img/eng_pics/1.jpg" alt="Engagement photo 1" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/2.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="fancybox" rel="group" href="img/eng_pics/2.jpg">
+                            <div class="img-wrap">
+                                <img src="img/eng_pics/2.jpg" alt="Engagement photo 2" />
                             </div>
-                            <img src="img/eng_pics/2.jpg" alt="Engagement photo 2" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/3.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="fancybox" rel="group" href="img/eng_pics/3.jpg">
+                            <div class="img-wrap">
+                                <img src="img/eng_pics/3.jpg" alt="Engagement photo 3" />
                             </div>
-                            <img src="img/eng_pics/3.jpg" alt="Engagement photo 3" />
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <!-- Añade aquí el resto de las imágenes de la misma forma -->
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/4.jpeg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/eng_pics/4.jpeg" alt="Engagement photo 4" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/5.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/eng_pics/5.jpg" alt="Engagement photo 5" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/6.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/eng_pics/6.jpg" alt="Engagement photo 6" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/7.jpeg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/eng_pics/7.jpeg" alt="Engagement photo 7" />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a class="fancybox" rel="group" href="img/eng_pics/8.jpg">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/eng_pics/8.jpg" alt="Engagement photo 8" />
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row hidden-lg hidden-md hidden-xs">
-                <div class="col-xs-12 section-border section-padding"></div>
+                <!-- Opcional: navegación de botones -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -537,12 +484,14 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-user"></i><input name="surname" class="" placeholder="Apellidos" required>
+                                    <i class="fa fa-user"></i><input name="surname" class="" placeholder="Apellidos"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-check"></i><input name="attendance" class="" placeholder="¿Asistirás?" required>
+                                    <i class="fa fa-check"></i><input name="attendance" class=""
+                                        placeholder="¿Asistirás?" required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -552,18 +501,20 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-lock"></i><input name="intolerances" class="" placeholder="Restricciones alimentarias">
+                                    <i class="fa fa-lock"></i><input name="intolerances" class=""
+                                        placeholder="Restricciones alimentarias">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-comment"></i><input name="comments" class="" placeholder="Comentarios">
+                                    <i class="fa fa-comment"></i><input name="comments" class=""
+                                        placeholder="Comentarios">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
-                                <div style="display: flex; align-items: center; margin-top: 15px;"> 
+                                <div style="display: flex; align-items: center; margin-top: 15px;">
                                     <label class="toggle-container">
                                         Añadir acompañante
                                         <input type="checkbox" id="companion-toggle">
@@ -575,12 +526,14 @@
                         <div class="row" id="companion-form" style="display: none; margin-top: 15px;">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-user"></i><input name="companion-name" id="companion_name" class="" placeholder="Nombre del acompañante">
+                                    <i class="fa fa-user"></i><input name="companion-name" id="companion_name" class=""
+                                        placeholder="Nombre del acompañante">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
-                                    <i class="fa fa-user"></i><input name="companion-surname" id="companion_surname" class="" placeholder="Apellidos del acompañante">
+                                    <i class="fa fa-user"></i><input name="companion-surname" id="companion_surname"
+                                        class="" placeholder="Apellidos del acompañante">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -597,13 +550,13 @@
                             Continuar
                         </button>
                     </form>
-                    
+
                     <script>
                         document.getElementById('companion-toggle').addEventListener('change', function () {
                             const companionForm = document.getElementById('companion-form');
                             const companionName = document.getElementById('companion_name');
                             const companionSurname = document.getElementById('companion_surname');
-                    
+
                             if (this.checked) {
                                 companionForm.style.display = 'block';
                                 companionName.setAttribute('required', 'required');
