@@ -213,26 +213,20 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>¡Un momento!</strong> Estamos guardando tu información.'));
-
-        if (MD5($('#invite_code').val()) !== '18dc11ef55d6b1378d466643979b1dc2'
-        && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Tu código de invitación es incorrecto.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbxXD6cJGiUrW_xs1oNvVz-SO2D7jzBnN95AUfbyDq1IJVUF-GqKV84lKkX9AfIQbi8/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Lo sentimos!</strong> Hay algún problema con el servidor. '));
-                });
-        }
+        $.post('https://script.google.com/macros/s/AKfycbxXD6cJGiUrW_xs1oNvVz-SO2D7jzBnN95AUfbyDq1IJVUF-GqKV84lKkX9AfIQbi8/exec', data)
+            .done(function (data) {
+                console.log(data);
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+            })
+            .fail(function (data) {
+                console.log(data);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Lo sentimos!</strong> Hay algún problema con el servidor. '));
+            });
     });
 
 });
@@ -241,7 +235,7 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 36.59895437563276, lng: -6.232928033167001};
+    var location = { lat: 36.59895437563276, lng: -6.232928033167001 };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -255,7 +249,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = { lat: 20.305826, lng: 85.85480189999998 };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
