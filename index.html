@@ -494,19 +494,32 @@
 
     </section>
 
-    
+
     <section id="regalos">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <h3 class="header">Regalos</h3>
-                    <p> ¡Vuestra presencia es nuestro mayor regalo! Si además queréis ayudarnos a comenzar esta nueva etapa con una aventura inolvidable en Uganda, Kenia y Seychelles, podéis hacerlo aquí: </p>
-                    <p> IBAN: ES07 0128 0073 6701 0006 4485</p>
+                    <p> ¡Vuestra presencia es nuestro mayor regalo! Si además queréis ayudarnos a comenzar esta nueva
+                        etapa con una aventura inolvidable en Uganda, Kenia y Seychelles, podéis hacerlo aquí: </p>
+                    <p> IBAN:
+                        <span id="iban">ES07 0128 0073 6701 0006 4485</span>
+                        <button onclick="copiarIBAN()"
+                            style="padding: 8px 12px; border: none; background-color: white; color: white; border-radius: 5px; cursor: pointer;">
+                            📋</button>
+
+                        <!-- Toast -->
+                    <div id="toast" style="visibility: hidden; min-width: 200px;background-color: #333;color: #fff;text-align: center;
+                    border-radius: 5px;padding: 12px;position: fixed;z-index: 1;bottom: 30px;left: 50%;transform: translateX(-50%);font-size: 14px;
+                    opacity: 0;transition: opacity 0.5s ease-in-out;">
+                        IBAN copiado al portapapeles ✅
+                    </div>
+                    </p>
                     <img src="img/gorilas-uganda.jpg" alt="Gorilas Uganda"
-                            style="width:100%;max-width:600px;margin:10px 0;">    
+                        style="width:100%;max-width:600px;margin:10px 0;">
                 </div>
             </div>
-        
+
         </div>
 
     </section>
@@ -702,6 +715,38 @@
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-46465113-4', 'auto');
         ga('send', 'pageview');
+    </script>
+    <!-- Script -->
+    <script>
+        function copiarIBAN() {
+            const texto = document.getElementById("iban").innerText;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(texto)
+                    .then(() => mostrarToast())
+                    .catch(err => alert("Error al copiar el IBAN: " + err));
+            } else {
+                const input = document.createElement("input");
+                input.value = texto;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand("copy");
+                document.body.removeChild(input);
+                mostrarToast();
+            }
+        }
+        function mostrarToast() {
+            const toast = document.getElementById("toast");
+            toast.style.visibility = "visible";
+            toast.style.opacity = "1";
+
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                setTimeout(() => {
+                    toast.style.visibility = "hidden";
+                }, 500);
+            }, 2000); // El toast desaparece después de 2 segundos
+        }
     </script>
 </body>
 
